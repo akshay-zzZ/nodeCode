@@ -3,9 +3,6 @@ var app = express();
 var cors = require('cors');
 
 app.use(cors());
-// app.get('/', function (req, res) {
-//     res.send('<html><body><h1>Hello World</h1></body></html>');
-// });
 
 var server = app.listen(4000, function () {
     console.log('Node server is running..');
@@ -18,13 +15,13 @@ var config = {
     authentication: {
         type: 'default',
         options: {
-            userName: 'SA',
-            password: 'Justwork@1'
+            userName: '',
+            password: ''
         }
     },  
     options: {
         encrypt: false,
-        database: 'projectdemo',
+        database: '',
         rowCollectionOnDone: true,
         validateBulkLoadParameters: true
     }
@@ -61,35 +58,3 @@ function executeStatement() {
     });
     connection.execSql(request)
 }
-
-// var sql = require('mysql');
-
-// var config = {
-//     server: 'localhost',
-//     userName: 'SA',
-//     password: 'Justwork@1',
-//     database: 'testDB',
-//     port: 1433,
-//     options: {
-//         encrypt: false
-//     }
-// }
-
-// function getRec() {
-//     var cons = new ConnectionPool(config);
-//     cons.connect(function (err) {
-//         if(err) 
-//             console.log(err);
-//         var req = new sql.Request(cons);
-//         req.query("SELECT * FROM dbo.TowerMapping;", function(err, record) {
-//             if(err) 
-//                 console.log(err);
-//             else
-//                 console.log(record);
-//             cons.close();
-//         });
-//     });
-
-// }
-
-// getRec();
