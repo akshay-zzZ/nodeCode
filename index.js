@@ -10,18 +10,18 @@ var server = app.listen(4000, function () {
 
 var Connection = require('tedious').connect;  
 var config = {  
-    server: 'localhost',
+    server: '',    //Provide own credentials
     port: 1433,
     authentication: {
         type: 'default',
         options: {
-            userName: '',
-            password: ''
+            userName: '',   //Provide own credentials
+            password: ''    //Provide own credentials
         }
     },  
     options: {
         encrypt: false,
-        database: '',
+        database: '',   //Provide own credentials
         rowCollectionOnDone: true,
         validateBulkLoadParameters: true
     }
